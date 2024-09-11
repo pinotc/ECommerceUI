@@ -1,0 +1,107 @@
+<div class="my-container mx-auto page-order">
+  <section class="m-3 p-4 my-rounded-corner page-left">
+    <h4 class="my-rounded-corner">Thông tin thanh toán</h4>
+    <table class="table my-shadow">
+      <tbody>
+        <tr>
+          <td>Tổng sản phẩm</td>
+          <td class="fs-5 fw-bold">{{ usersCart.cartItems.length }}</td>
+        </tr>
+        <tr>
+          <td>Thành tiền</td>
+          <td class="fs-5 fw-bold text-danger">
+            {{ usersPaymentInfo.totalAmount }}
+          </td>
+        </tr>
+        <tr>
+          <td>Chi phí vận chuyển</td>
+          <td class="fs-5 fw-bold text-danger">
+            {{ usersPaymentInfo.shipingCharges }}
+          </td>
+        </tr>
+        <tr>
+          <td>Giảm giá</td>
+          <td class="fs-5 fw-bold text-success">
+            {{ usersPaymentInfo.amountReduced }}
+          </td>
+        </tr>
+        <tr>
+          <td>Tổng tiền</td>
+          <td class="fs-5 fw-bold text-success">
+            {{ usersPaymentInfo.amountPaid }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-right">
+    <section
+      class="m-3 p-4 my-rounded-corner"
+      *ngIf="usersCart.cartItems.length > 0"
+    >
+      <h4 class="my-rounded-corner">Phương thức thanh toán</h4>
+      <div class="d-flex align-items-center">
+        <h5 class="me-4">Chọn phương thức</h5>
+        <select class="form-select" [formControl]="selectedPaymentMethod">
+          <option value="0"></option>
+          <option
+            *ngFor="let paymentMethod of paymentMethods"
+            value="{{ paymentMethod.id }}"
+          >
+            {{ paymentMethod.type }}
+            <span *ngIf="paymentMethod.provider !== ''">{{
+              " - " + paymentMethod.provider
+            }}</span>
+          </option>
+        </select>
+      </div>
+    </section>
+
+    <section
+      class="m-3 p-4 my-rounded-corner"
+      *ngIf="usersCart.cartItems.length > 0"
+    >
+      <h4 class="my-rounded-corner">Quy trình thanh toán</h4>
+      <div class="mt-4 w-35" *ngIf="selectedPaymentMethodName !== ''">
+        <table class="table my-shadow">
+          <thead>
+            <tr>
+              <td>Tổng tiền</td>
+              <td class="text-success"><b>{{ usersPaymentInfo.amountPaid }}</b></td>
+            </tr>
+            <tr>
+              <td>Phương thức thanh toán</td>
+              <td>{{ this.getPaymentMethod(selectedPaymentMethodName) }}</td>
+            </tr>
+            <tr>
+              <td>Địa chỉ</td>
+              <td *ngIf="true">{{ address }}</td>
+            </tr>
+            <tr>
+              <td>Số điện thoại</td>
+              <td *ngIf="true">{{ mobileNumber }}</td>
+            </tr>
+          </thead>
+        </table>
+
+        <div class="d-grid w-50">
+          <button type="button" class="btn-pay" (click)="placeOrder()">
+            THANH TOÁN
+          </button>
+        </div>
+
+        <div class="processing">
+          <div class="spinner-border me-4" role="status" *ngIf="displaySpinner">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <h6 class="m-0" [ngClass]="classname">{{ message }}</h6>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- <div *ngIf="!false" class="pt-4">
+        <h2>You have not Logged In</h2>
+    </div> -->
+</div>

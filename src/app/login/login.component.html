@@ -1,0 +1,53 @@
+<!-- Login Form -->
+
+
+
+<div class="main">
+  <div class="container">
+    <div class="login-form">
+        <div class="login-form-left">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <p class="form-title">CHÀO MỪNG BẠN QUAY TRỞ LẠI!</p>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <input type="email" class="form-control form-input" id="email" formControlName="email" placeholder="Email">
+                <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+                    Yêu cầu nhập email.
+                </div>
+                <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+                    Email không hợp lệ.
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <input type="password" class="form-control form-input" id="pwd" formControlName="pwd" placeholder="Mật khẩu">
+                <div class="form-text text-danger" *ngIf="PWD.errors?.['required'] && (PWD.dirty || PWD.touched)">
+                    Yêu cầu nhập mật khẩu.
+                </div>
+                <div class="form-text text-danger"
+                     *ngIf="PWD.errors?.['minlength'] || PWD.errors?.['maxlength'] && (PWD.dirty || PWD.touched)">
+                    Mật khẩu phải có ít nhất 6 và dài tối đa 15 ký tự.
+                </div>
+            </div>
+
+            <!-- Login Button -->
+            <div >
+                <button type="submit" [disabled]="loginForm.invalid" class="btn-login-submit">
+                    Đăng nhập
+                </button>
+            </div>
+
+            <div class="mt-3 text-center">
+                <h5 class="text-success">{{message}}</h5>
+            </div>
+          </form>
+        </div>
+        <div class="login-img">
+          <img src="../../assets/Images/Baner/svgLog.png"  alt="Baner">
+        </div>
+    </div>
+  </div>
+</div>
+

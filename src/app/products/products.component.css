@@ -1,0 +1,16 @@
+.my-container {
+  font-family: "Baloo 2", cursive;
+}
+.sort-by{
+  background-color: #ffffff;
+  border: 2px solid #D56B1E;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 0 5px;
+}
+.btn-active{
+  background-color: #D56B1E;
+  color: white;
+}

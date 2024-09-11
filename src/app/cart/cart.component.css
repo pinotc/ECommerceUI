@@ -1,0 +1,65 @@
+.delete-item{
+    position: absolute;
+    border: none;
+    font-family: 'Baloo 2',cursive ;
+    font-family: 700;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 10px 5px 10px;
+    top: 60%;
+    left: 85%;
+}
+.my-container{
+  font-family: "Baloo 2", cursive;
+}
+.btn-pay{
+  padding: 10px 0;
+  font-size: 20px;
+  border-radius: 15px;
+  font-weight: 700;
+  border: 2px solid #D56B1E;
+}
+.btn-pay:hover{
+  background-color: #D56B1E;
+  color: white;
+  border: none;
+  font-weight: 700 ;
+  font-size: 20px;
+}
+.time, .count, .price {
+  font-size: 20px;
+}
+.page-cart{
+  width: 100%;
+  display: flex;
+}
+.page-left{
+  width: 50%;
+}
+.page-right{
+  width: 50%;
+  margin: 8% 2%;
+}
+.mt-4{
+  margin-left: 10%;
+}
+table{
+  border: 2px dotted #000000;
+  background: rgba(224, 224, 224, 0.40);
+  width: 80%;
+}
+h4{
+  font-weight: 700;
+  color: #D56B1E;
+  margin-left: 40px;
+}
+td{
+  border: none
+}
+.m-3{
+  border: 2px dotted #D56B1E;
+}
+
+

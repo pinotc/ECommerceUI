@@ -1,0 +1,153 @@
+<header>
+  <div>
+    <a href="#">UDVY</a>
+    <nav>
+      <ul class="child-menu-first">
+        <li>
+          <i class="fa-solid fa-magnifying-glass" style="color: #8f8f8f"></i>
+          <input type="text" placeholder="Tìm kiếm" #searchInput />
+          <button class="button-search" type="button" (click)="onSearch(searchInput)">
+            SEARCH
+          </button>
+        </li>
+      </ul>
+      <ul class="child-menu-second">
+        <li><a href="#">TRANG CHỦ</a></li>
+        <!-- <li>
+                  <a href="#">PHÂN LOẠI <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path id="Vector" d="M8.49625 11.3882L0.418725 3.62676C-0.139575 3.09031 -0.139575 2.22285 0.418725 1.69211L1.76102 0.402339C2.31932 -0.134113 3.2221 -0.134113 3.77446 0.402339L9.5 5.90383L15.2255 0.402339C15.7838 -0.134113 16.6866 -0.134113 17.239 0.402339L18.5813 1.69211C19.1396 2.22856 19.1396 3.09601 18.5813 3.62676L10.5038 11.3882C9.95733 11.9246 9.05455 11.9246 8.49625 11.3882Z" fill="#3E3838"/>
+                      </svg>
+                      </a>
+                  <ul class="child-child-menu-second">
+                    <ng-container *ngFor="let item of navigationList; let i = index;">
+                      <li class="text-center fw-bold">{{item.category | titlecase}}</li>
+
+
+                  </ng-container>
+                  </ul>
+              </li> -->
+        <!-- <li><a href="#">GIẢM GIÁ</a></li> -->
+        <li>
+          <a href="#">ANANAS
+            <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="Vector"
+                d="M8.49625 11.3882L0.418725 3.62676C-0.139575 3.09031 -0.139575 2.22285 0.418725 1.69211L1.76102 0.402339C2.31932 -0.134113 3.2221 -0.134113 3.77446 0.402339L9.5 5.90383L15.2255 0.402339C15.7838 -0.134113 16.6866 -0.134113 17.239 0.402339L18.5813 1.69211C19.1396 2.22856 19.1396 3.09601 18.5813 3.62676L10.5038 11.3882C9.95733 11.9246 9.05455 11.9246 8.49625 11.3882Z"
+                fill="#3E3838" />
+            </svg></a>
+          <ul class="child-child-menu-second">
+            <ng-container *ngIf="navigationList && navigationList.length > 0">
+              <li *ngFor="let subcategory of navigationList[0].subcategories" [style.cursor]="'pointer'">
+                <a class="dropdown-item" OpenProducts [category]="{
+                    id: 0,
+                    category: navigationList[0].category,
+                    subCategory: subcategory
+                  }">
+                  {{ subcategory | titlecase }}
+                </a>
+              </li>
+              <li *ngIf="navigationList.length > 1">
+                <!-- <hr class="dropdown-divider"> -->
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+        <li>
+          <a href="#">NIKE
+            <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="Vector"
+                d="M8.49625 11.3882L0.418725 3.62676C-0.139575 3.09031 -0.139575 2.22285 0.418725 1.69211L1.76102 0.402339C2.31932 -0.134113 3.2221 -0.134113 3.77446 0.402339L9.5 5.90383L15.2255 0.402339C15.7838 -0.134113 16.6866 -0.134113 17.239 0.402339L18.5813 1.69211C19.1396 2.22856 19.1396 3.09601 18.5813 3.62676L10.5038 11.3882C9.95733 11.9246 9.05455 11.9246 8.49625 11.3882Z"
+                fill="#3E3838" />
+            </svg></a>
+          <ul class="child-child-menu-second">
+            <ng-container *ngIf="navigationList && navigationList.length > 0">
+              <li *ngFor="let subcategory of navigationList[1].subcategories" [style.cursor]="'pointer'">
+                <a class="dropdown-item" OpenProducts [category]="{
+                    id: 0,
+                    category: navigationList[1].category,
+                    subCategory: subcategory
+                  }">
+                  {{ subcategory | titlecase }}
+                </a>
+              </li>
+              <li *ngIf="navigationList.length > 1">
+                <!-- <hr class="dropdown-divider"> -->
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+        <li>
+          <a href="#">ADIDAS
+            <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="Vector"
+                d="M8.49625 11.3882L0.418725 3.62676C-0.139575 3.09031 -0.139575 2.22285 0.418725 1.69211L1.76102 0.402339C2.31932 -0.134113 3.2221 -0.134113 3.77446 0.402339L9.5 5.90383L15.2255 0.402339C15.7838 -0.134113 16.6866 -0.134113 17.239 0.402339L18.5813 1.69211C19.1396 2.22856 19.1396 3.09601 18.5813 3.62676L10.5038 11.3882C9.95733 11.9246 9.05455 11.9246 8.49625 11.3882Z"
+                fill="#3E3838" />
+            </svg></a>
+          <ul class="child-child-menu-second">
+            <ng-container *ngIf="navigationList && navigationList.length > 0">
+              <li *ngFor="let subcategory of navigationList[2].subcategories" [style.cursor]="'pointer'">
+                <a class="dropdown-item" OpenProducts [category]="{
+                    id: 0,
+                    category: navigationList[2].category,
+                    subCategory: subcategory
+                  }">
+                  {{ subcategory | titlecase }}
+                </a>
+              </li>
+              <li *ngIf="navigationList.length > 1">
+                <!-- <hr class="dropdown-divider"> -->
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="child-menu-third">
+        <li>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#generalmodal" (click)="OpenLogin()"
+            *ngIf="!utilityService.isLoggedIn()" style="margin-right: 7px">
+            Đăng nhập
+          </button>
+        </li>
+        <li>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#generalmodal" (click)="OpenRegister()"
+            *ngIf="!utilityService.isLoggedIn()">
+            Đăng ký
+          </button>
+        </li>
+      </ul>
+      <ul class="child-menu-fourth">
+        <li style="display: flex">
+          <span *ngIf="utilityService.isLoggedIn()">
+            <span *ngFor="let user of users">Xin chào, {{ user.firstName + " " + user.lastName }}</span>
+          </span>
+          <button type="button" (click)="utilityService.logoutUser()" *ngIf="utilityService.isLoggedIn()">
+            <i class="fa-solid fa-right-from-bracket" style="color: #000000; font-size: 30px; padding-left: 10px"></i>
+          </button>
+        </li>
+        <li style="display: flex; align-items: center">
+          <button type="button" routerLink="/cart" *ngIf="utilityService.isLoggedIn()" style="position: relative;">
+            <i class="fa-solid fa-cart-shopping" style="color: #000000; font-size: 30px"></i>
+            <span class="number-card" style="position: absolute;top:-5%;left: 85%;">{{ cartItems }}</span>
+          </button>
+          <button type="button" routerLink="/orders" *ngIf="utilityService.isLoggedIn()">
+            <span class="orders">ĐƠN HÀNG</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- <div class="modal fade" id="generalmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" #modalTitle></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container #container></ng-container>
+      </div>
+    </div>
+  </div>
+</div> -->
